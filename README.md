@@ -3,14 +3,14 @@
 ## Код для исследования
 ```java
 
-public class JvmComprehension { // 1) Класс JvmComprehension будет отдан в систему загрузчиков классов для загрузки.
+public class JvmComprehension { // 1) Класс JvmComprehension будет отдан в систему загрузчиков классов для загрузки (загрузчику ApplicationClassLoader).
 
     public static void main(String[] args) {
         int i = 1;                      // 2)
         Object o = new Object();        // 3)
         Integer ii = 2;                 // 4
         printAll(o, i, ii);             // 5
-        System.out.println("finished"); // 6
+        System.out.println("finished"); // 6) Класс System будет загружен BootStrap ClassLoader'ом (если я все правильно понял :) ).
     }
 
     private static void printAll(Object o, int i, Integer ii) {
